@@ -12,6 +12,18 @@ Once emulator is running:
 * In Wireshark: Preferences > Protocols > TLS > Pre-Master-Secret log file, select 'ssl.log'
 
 
+If you get
+```
+ => ERROR https://git.lekensteyn.nl/peter/wireshark-notes/plain/src/sslkeylog.c                                              0.6s
+------
+ > https://git.lekensteyn.nl/peter/wireshark-notes/plain/src/sslkeylog.c:
+------
+failed to load cache key: invalid not-modified ETag: "9d176c9f9fb1d961350d17c7875fb2588e22fa1b"
+ERROR: Service 'adb' failed to build
+```
+
+then prune all of docker's cache with `docker system prune -a`
+
 
 Original readme follows:
 
