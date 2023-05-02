@@ -1,3 +1,19 @@
+# Notes:
+
+
+Once emulator is running:
+
+* `adb shell wm density 100`
+* `setenforce 0`
+* `adb push tcpdump /sdcard/tcpdump`
+* `adb shell su 0 mount -o rw,remount -t yaffs2 /dev/block/vda /system`
+* `adb shell su 0 cp /sdcard/tcpdump /system/bin/tcpdump`
+* `adb exec-out "su 0 tcpdump -i any -U -w - 2>/dev/null"| wireshark -k -S -i -`
+* In Wireshark: Preferences > Protocols > TLS > Pre-Master-Secret log file, select 'ssl.log'
+
+
+
+Original readme follows:
 
 # Android SSL MITM
 
